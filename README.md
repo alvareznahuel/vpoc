@@ -8,24 +8,51 @@ Virtual Pack of Cards
 * In a game all participants can operate over a pack of cards.
 * There are public operations and private operations over the pack of cards.
 
-# Api resources tree
+# Implemented api resources tree
 
 /api
-    /users
-        POST: Sign-in a new user.
-    /users/login
-        POST: Create a new user space to create o participate in a game.
-    /users/logoff
-        POST: Destroy an user space.
-    /packofcards
-        GET: Enquire the list of cards into a pack.
-        POST: Create a pack of Cards form a list of cards.
-    /packofcards/createspainx50
-        POST: Create a standar Spain pack of 50 cards.
-    /packofcards/createspainx40
-        POST: Create a standar Spain pack of 40 cards (without eights, nines or jokers).
-    /packofcards/createpoker
-        POST: Create a standar poker pack of cards.
+    /v1
+        /suits
+            GET: List of all card suits.
+        /suits/<id>
+            POST: Create a new card suit.
+            PUT: Update card suit information.
+            DELETE: Erase a card suit.
 
+# Next api resources tree
+
+/api
+    /v1
+        /users
+            GET: List of sign up users.
+            POST: Sign-in a new user.
+        /users/<id>
+            PUT: Update Log in or log out user status.
+            DELETE: Eliminate an existing user.
+        /games
+            GET: List of started games.
+            POST: Create a new game.
+        /games/<id>
+            PUT: Update game information.
+            DELETE: Finish a created game.
+        /packofcards
+            GET: Enquire the list of packs of cards.
+            POST: Create a new pack of Cards.
+        /packofcards/spain
+            GET: List of cards into a pack of spain cards.
+        /packofcards/spain40
+            GET: List of cards into a pack of spain cards without eights, nines or jokers.
+        /packofcards/poker
+            GET: List of cards into a poker pack of cards.
+        /cards
+            GET: List of cards defined in api.
+        /cards/<id>
+            POST: Create a new card.
+            PUT: Update card information.
+            DELETE: Erase a card.
+
+# Reference to global pack of cards
+
+https://es.m.wikipedia.org/wiki/Palo_(naipes)
 
 
